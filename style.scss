@@ -1,0 +1,56 @@
+@use "rem";
+body {
+    border: 1px solid brown;
+    div {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        h1 {
+            color: green;
+            text-decoration: underline purple;
+        }
+    }
+}
+section {
+    width: 95%;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    border: 1px solid green;
+    margin: 10px;
+    article {
+        border-right: 3px solid green;
+        p {
+            margin: 10px;
+            
+        }
+    }
+}
+
+$blu: hsl(234, 100%, 50%);
+$red:  #ff0000; 
+
+.p-1 {
+    color: $blu;
+}
+.p-2 {
+    color: $red;
+}
+@mixin article-card ($color, $border-color, $font-size) {
+    color:$color;
+    border: $border-color;
+    font-size: $font-size;
+    
+}
+.p-3 {
+    @include article-card(green, 1px solid $blu, 1rem);
+    article {
+        border-right: none;
+    }    
+}
+.big {
+    font-size: rem.modifica(24px);
+}
