@@ -1,0 +1,50 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.bg-random {
+    width: 100px;
+    height: 100px;
+    margin:10px;
+}
+
+@mixin random-color ($selector) {
+    #{$selector}: unquote("rgba(#{random(256) - 1}, #{random(256)-1}, #{random(256 - 1)}, #{random(100)/100})");
+    width: 100px;
+    height: 100px;
+    margin:10px;
+    border-radius: 100%;
+}
+
+
+@for $i from 1 to 3 {
+    .bg-random-#{$i} {
+        @include random-color("background-color");
+        @extend %bounce;
+    }
+    
+    .bg-random-1:hover{
+            animation: bounce 1s;
+        }
+    .bg-random-2:hover{
+            animation: bounce 1s;
+        }
+    
+}
+%bounce {
+    @keyframes bounce {
+        20%,50%,80%,100% {
+            transform: translate(0);
+        }
+        40%{
+            transform: translateY(-30px);
+        }
+        70%{
+            transform: translateY(-20px);
+        }
+        90%{
+            transform: translateY(-10px);
+        }
+    }
+}
