@@ -17,7 +17,8 @@ body div {
 }
 body div h1 {
   color: green;
-  text-decoration: underline purple;
+  -webkit-text-decoration: underline purple;
+          text-decoration: underline purple;
 }
 body div section {
   width: 95%;
@@ -40,6 +41,4 @@ body div section article p {
 
 .p-2 {
   color: red;
-}
-
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */
